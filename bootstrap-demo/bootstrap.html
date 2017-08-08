@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+
+        * {
+        box-sizing: border-box;
+        }
+
+        .header {
+        background-color:black;
+        color: white;
+        min-height:80px;
+        }
+
+        .flex {
+        display: flex;
+        }
+
+        .horizontal-center {
+        justify-content: center;
+        }
+
+        .vertical-center {
+        align-items: center;
+        }
+
+        .relative {position:relative;}
+        .absolute-vertical-center {
+        position: absolute;
+        top:50%;
+        transform:translate(-50%,-50%);
+        }
+
+        .logo-image {
+            height: 60px;
+            width: 60px;
+        }
+
+        img.navbar-brand {
+        <!--height: 100%;-->
+        padding: 15px;
+        width: auto;
+        }
+
+        footer {
+        background-color: black;
+        color: white;
+        height:100px;
+        }
+
+        .main{
+        height:100px;
+        background-color: gold;
+        }
+
+        .display-flex {
+        display: flex;
+        }
+
+        .horizontal-center {
+        justify-content: center;
+        }
+
+        .vertical-center {
+        align-items: center;
+        }
+
+        .logo-image {
+        padding:3p 3px 3px 30px;
+        }
+
+    </style>
+</head>
+
+<body>
+<header>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+            <image class="navbar-brand logo-image"  src="image/logo.png"/>
+            </div>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">My Website</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Page 1</a></li>
+                <li><a href="#">Page 2</a></li>
+                <li><a href="#">Page 3</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+<div class="main">this is the main part</div>
+<footer>this is the footer</footer>
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>UML Testing</title>
+    <style>
+        .choice-item{
+        margin-top:15px;
+        margin-bottom:15px;
+        }
+    </style>
+</head>
+<body>
+<div><h1>统一建模语言理论测试</h1></div>
+
+
+<div id="info">
+    <table>
+        <tr>
+            <td>考试科目:</td>
+            <td>统一建模语言</td>
+            <td>时间:</td>
+            <td>100分钟</td>
+            <td>得分:</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>班级:</td>
+            <td><input type="text" value="一班"></td>
+            <td>学号:</td>
+            <td><input type="text" value="001"></td>
+            <td>姓名:</td>
+            <td><input type="text" value="王小闹"></td>
+        </tr>
+    </table>
+</div>
+
+<form id="answers" onsubmit="completeAndRedirect(); return false;" >
+    <div id="gap-filling">
+        <h2>一、填空题(每题5分, 共20分)</h2>
+        <ol type="1">
+            <li><label>UML的中文全称是:</label> <input name="一-1" type="text" value="统一建模语言" ></li>
+            <li><label>对象最突出的特征是:</label>
+                <input type="text" name="一-2" value="封装性" >
+                <input type="text" name="一-2" value="继承性" >
+                <input type="text" name="一-2" value="多态性" >
+            </li>
+        </ol>
+    </div>
+
+    <div id="single-choice">
+        <h2>二、选择题(每题10分, 共20分)</h2>
+        <ol type="1">
+            <li>UML与软件工程的关系是:
+                <div class="choice-item">
+                    <input type="radio" name="二-1" value="A">(A)UML就是软件工程<br>
+                    <input type="radio" name="二-1" value="B" checked>(B)UML参与到软件工程中软件开发过程的几个阶段<br>
+                    <input type="radio" name="二-1" value="C">(C)UML与软件工程无关<br>
+                    <input type="radio" name="二-1" value="D">(D)UML是软件工程的一部分<br>
+                </div>
+            </li>
+            <li>java语言支持:
+                <div class="choice-item">
+                    <input type="radio" name="二-2" value="A" checked>(A)单继承<br>
+                    <input type="radio" name="二-2" value="B">(B)多继承<br>
+                    <input type="radio" name="二-2" value="C">(C)单继承和多继承都支持<br>
+                    <input type="radio" name="二-2" value="D">(D)单继承和多继承都不支持<br>
+                </div>
+            </li>
+        </ol>
+    </div>
+
+    <div id="multiple-choice">
+        <h2>三、多择题(每题10分, 共20分)</h2>
+        <ol type="1">
+            <li>用例的力度分为以下哪三种:
+                <div class="choice-item">
+                    <input type="checkbox" name="三-1" value="A" checked>(A)概述级<br>
+                    <input type="checkbox" name="三-1" value="B" checked>(B)需求级<br>
+                    <input type="checkbox" name="三-1" value="c">(C)用户目标级<br>
+                    <input type="checkbox" name="三-1" value="D" checked>(D)子功能级<br>
+                </div>
+            </li>
+            <li>类图又以下那三部分组成:
+                <div class="choice-item">
+                    <input type="checkbox" name="三-2" value="A" checked>(A)名称(Name)<br>
+                    <input type="checkbox" name="三-3" value="B" checked>(B)属性(Attribute)<br>
+                    <input type="checkbox" name="三-2" value="c" checked>(C)操作(Operation)<br>
+                    <input type="checkbox" name="三-2" value="D">(D)方法(Function)<br>
+                </div>
+            </li>
+        </ol>
+    </div>
+
+    <div id="true-false">
+        <h2>四、判断题(每题10分, 共20分)</h2>
+        <ol>
+            <li>用例图只是用于和客户交流和沟通的,用于确定需求.
+                <input type="radio" name="四-1" value="true"  checked>√
+                <input type="radio" name="四-1" value="false" >×
+            </li>
+            <li>在状态图中,终止状态在一个状态图中允许有任意多个.
+                <input type="radio" name="四-2" value="true" >√
+                <input type="radio" name="四-2" value="false"  checked>×
+            </li>
+        </ol>
+    </div>
+
+    <div>
+        <h2>五、简答题(每题20分, 共20分)</h2>
+        <ol>
+            <li>描述什么是模型以及模型的表现形式?
+                <div>
+                <textarea name="五" id="五" rows="10" cols="100">模型是对现实世界的简化与抽象, 模型是对所研究的系统、过程、事物或概念的一种表达形式. 可以是物理实体; 可以是某种图形; 或者一种数字表达式.
+                </textarea>
+                </div>
+            </li>
+        </ol>
+    </div>
+    <label>邮箱:</label> <input name="email">
+    <!--<label>身份证号:</label> <input name="ID"  required>-->
+    <input type="submit" value="提交">
+
+</form>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+
+<script>
+
+        function completeAndRedirect(){
+                localStorage.answers=  JSON.stringify($('form#answers').serializeArray());
+                window.location.href = "result.html";
+        }
+
+        <!--$("form#answers").validate();-->
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+
+        * {
+        box-sizing: border-box;
+        }
+
+        .footer {
+        background-color:black;
+        color:white;
+        height: 80px;
+        width: 100%;
+        text-align:center;
+        }
+
+
+        .inner {
+        background-color:yellow;
+        color:white;
+        text-align: center;
+        margin:auto;
+        color:black;
+        }
+
+
+        div {
+        border: solid red;
+        }
+
+        div .row {
+        height: 90px;
+        }
+
+    </style>
+
+    <script type="text/javascript">
+
+<!--$('form#person-form').submit(function(){-->
+    <!--alert("dd");-->
+    <!--$(this).find(':input[type=submit]').prop('disabled', true);-->
+<!--});-->
+
+    function myFunction() {
+
+        localStorage.para=  JSON.stringify($('#person-form').serializeArray());
+        <!--alert(localStorage.para)-->
+        window.location.href = "index.html";
+    }
+
+    </script>
+</head>
+
+<body>
+
+
+<form name="person-form" id="person-form" onsubmit="myFunction(); return false;" >
+    <fieldset>
+        First name:<br>
+        <input type="text" id="firstname" name="firstname" value="Mickey">
+        <br>
+        Last name:<br>
+        <input type="text" name="lastname" id="lastname" value="Mouse">
+        <br><br>
+        <h2>一、填空题(每题5分, 共20分)</h2>
+        <ol type="1">
+            <li><label>UML的中文全称是:</label> <input name="UML的中文全称是" type="text" value="统一建模语言"></li>
+            <li><label>对象最突出的特征是:</label>
+                <input name="对象最突出的特征是" type="text" value="封装性">
+                <input name="对象最突出的特征是" type="text" value="继承性">
+                <input name="对象最突出的特征是" type="text" value="多态性">
+            </li>
+        </ol>
+        <input id="submit" type="submit" />
+    </fieldset>
+</form>
+<button value="click me" onclick="myFunction()">click me</button>
+<p id="demo"></p>
+
+</body>
+</html>
+
+<!--var person = $('#person-form').serializeArray()-->
+

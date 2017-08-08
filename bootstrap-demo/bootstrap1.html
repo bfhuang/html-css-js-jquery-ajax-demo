@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+
+        * {
+        box-sizing: border-box;
+        }
+
+        .header {
+        background-color:black;
+        color: white;
+        border-radius: 3px;
+        }
+
+        .logo {
+        margin:20px 5px 20px 30px;
+        }
+
+        .logo-image {
+        height:60px;
+        width:60px;
+        }
+
+        .nick-name {
+
+        margin-left: 20px;
+        font-size:18px;
+        }
+
+        .vertical-align {
+        display: flex;
+        align-items: center;
+        }
+
+        header ul {
+        list-style-type: none;
+        padding: 0px;
+        margin-left: 40px;
+        }
+
+        header ul>li{
+        display: inline-block;
+        }
+
+        header ul>li>a{
+        color:white;
+        text-decoration:none;
+        padding: 10px 15px;
+        border-radius: 3px;
+        }
+
+        header ul>li>a:hover {
+        background-color: #434141;
+        color: white;
+        text-decoration:none;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+
+<header class="header">
+
+    <!--<div class="row">-->
+    <!--<div class="col-md-6 vcenter">first <br> first-2</div>-->
+    <!--<div class="col-md-6 vcenter">second</div>-->
+    <!--</div>-->
+
+    <div class="row vertical-align">
+        <div class="col-md-3">
+            <div class="logo">
+                <img class="logo-image" src="image/logo.png">
+
+                <span class="nick-name">My Website</span>
+            </div>
+        </div>
+        <!--
+            -->
+        <div class="col-md-4 col-md-offset-5">
+            <nav>
+                <ul>
+                    <li><a href="https://www.baidu.com">Feature</a></li>
+                    <li><a href="https://www.baidu.com">Pricing</a></li>
+                    <li><a href="https://www.baidu.com">about</a></li>
+                    <li><a href="https://www.baidu.com">Sign Up</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<br>
+<header class="header">
+    <div class="row">
+        <div class="col-xs-12 col-md-4">.col-xs-12 .col-md-8</div>
+        <div class="col-xs-6 col-md-4 col-md-offset-4">.col-xs-6 .col-md-4</div>
+    </div>
+</header>
+
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button#get-button").click(function () {
+                $.ajax({
+                    url: "http://10.206.22.55:8080/employees/1",
+                    dataType: "json",
+                    type: "GET",
+                    success: function (result) {
+
+                        let htmlValue='';
+                        for(let key in result){
+                            htmlValue+=key;
+                            htmlValue+=': '
+                            htmlValue+=result[key]
+                            htmlValue+='\n'
+                        }
+                        htmlValue +=result.address.line;
+                        $("#div1").html(htmlValue);
+                    }
+                });
+            });
+
+            $("button#post-button").click(function () {
+                $.ajax({
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    url: "http://10.206.22.55:8080/employees",
+                    type: "POST",
+                    data: '{"name": "binfang3", "age": 18}',
+                    success: function (data, status) {
+                        $("#div1").html('status: '+ status);
+                    }
+                });
+            });
+
+        });
+    </script>
+</head>
+<body>
+
+<div id="div1"><h2>Let jQuery AJAX Change This Text</h2></div>
+
+<button id="get-button">Get External Content</button>
+<button id="post-button">Post External Content</button>
+
+</body>
+</html>

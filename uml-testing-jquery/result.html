@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+<p id="result">
+
+    this is the index
+
+</p>
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(
+        function(){
+            var answers = JSON.parse(localStorage.answers);
+            var result='你提交的内容如下:<br>';
+
+            answers.forEach(
+                function(item){
+                    result+= (item.name + ': ' + item.value + '<br>');
+                    }
+                );
+            $("p#result").html(result);
+        }
+   );
+
+
+
+    </script>
+
+</body>
+</html>
+
